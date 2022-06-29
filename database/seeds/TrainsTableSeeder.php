@@ -27,12 +27,14 @@ class TrainsTableSeeder extends Seeder
             $train = new Train();
             $train->company = $companies[rand(0, count($companies) - 1)];
             $train->departure_station = $faker->city();
-            $train->arrival_station = $faker->city();
-            $train->time_departure = $faker->time();
-            $train->time_arrival = $faker->time();
-            $train->train_code = $faker->regexify('[A-Z]{4}[0-9]{4}');
-            $train->wagons_number = $faker->numberBetween(4, 40);
-            $train->on_time = $faker->boolean();
+            $train->arrival_stazion = $faker->city();
+            $train->departure_time = $faker->time();
+            $train->arrive_time = $faker->time();
+            $train->race_ID = $faker->regexify('[A-Z]{5}[0-9]{4}');
+            $train->wagons_num = $faker->numberBetween(4, 20);
+            $train->punctual = $faker->boolean();
+            $train->delay = $faker->time();
+            $train->cancelled = $faker->boolean();
             $train->save();
         }
     }
